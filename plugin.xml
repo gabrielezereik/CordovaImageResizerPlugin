@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<plugin xmlns="http://apache.org/cordova/ns/plugins/1.0"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    id="it.jellyfishsolutions.Resize"
+    version="0.0.1">
+    <name>Resize</name>
+    <description>Image resize plugin</description>
+    <license>Apache 2.0</license>
+    <keywords></keywords>
+    <repo></repo>
+    <issue></issue>
+    <js-module src="www/Resize.js" name="Resize">
+        <clobbers target="Resize" />
+    </js-module>
+    <!-- android -->
+    <platform name="android">
+        <config-file target="res/xml/config.xml" parent="/*">
+            <feature name="Resize" >
+                <param name="android-package" value="Resize"/>
+            </feature>
+        </config-file>
+        <source-file src="src/android/Resize.java" target-dir="src/" />
+    </platform>
+</plugin>
