@@ -16,3 +16,9 @@ Resize.prototype.resize = function(config, callback) {
 var Resize = new Resize();
 
 module.exports = Resize;
+if (!window.plugins) {
+    window.plugins = {};
+}
+if (!window.plugins.Resize) {
+    window.plugins.Resize = Resize;
+}

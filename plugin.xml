@@ -9,9 +9,7 @@
     <keywords></keywords>
     <repo></repo>
     <issue></issue>
-    <js-module src="www/Resize.js" name="Resize">
-        <clobbers target="Resize" />
-    </js-module>
+   
     <!-- android -->
     <platform name="android">
         <config-file target="res/xml/config.xml" parent="/*">
@@ -19,6 +17,22 @@
                 <param name="android-package" value="Resize"/>
             </feature>
         </config-file>
+         <js-module src="www/android/Resize.js" name="Resize">
+        <clobbers target="Resize" />
+    </js-module>
         <source-file src="src/android/Resize.java" target-dir="src/" />
+    </platform>
+        <!-- ios -->
+    <platform name="ios">
+        <config-file target="config.xml" parent="/*">
+            <feature name="Resize">
+                <param name="ios-package" value="Resize" />
+            </feature>
+        </config-file>
+         <js-module src="www/ios/Resize.js" name="Resize">
+            <clobbers target="NumberPickerPlugin" />
+        </js-module>
+        <header-file src="src/ios/Resize.h" />
+        <source-file src="src/ios/Resize.m" />
     </platform>
 </plugin>
